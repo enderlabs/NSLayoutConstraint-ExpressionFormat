@@ -1,9 +1,9 @@
 //
-//  NSLayoutConstraint+ExpressionFormat.h
-//  MetroKit
+// NSLayoutConstraint+ExpressionFormat.h
+// MetroKit
 //
-//  Created by Donald Hays on 2/25/13.
-//  Copyright (c) 2013 Ender Labs. All rights reserved.
+// Copyright 2013 Ender Labs. All rights reserved.
+// Created by Donald Hays.
 //
 
 #import <UIKit/UIKit.h>
