@@ -55,10 +55,11 @@ Auto Layout uses a series of linear equations as constraints to determine the si
      view1.trailing >= 20
 
 ### Invalid Strings
-     view1 = view2                       // Attributes must be specified on views
-     view1.subview.left = 20             // Cannot follow dot paths of views
+
+     view1 = view2                       // Must specify view.attribute, not just view
+     view1.subview.left = 20             // Cannot follow dot paths of variables
      [view1 setLeft:20]                  // No. Just, no.
      view1.left = 20 + superview.left    // Constant must come at end of expression. Sorry :(
      view1.left + 20 = superview.left    // No really, the constant *must* come at end of expression.
      view1.left = 20 + 3                 // Don't do constant math
-     view1.left = view2.width * (0.9 + 5)// No parentheses
+     view1.left = view2.width * (0.9 + 5)// Don't do parentheses
