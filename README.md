@@ -43,3 +43,12 @@ Auto Layout uses a series of linear equations as constraints to determine the si
      addExpression           = (ADD_OPERATOR | SUB_OPERATOR) constant ;
      constant                = SUB_OPERATOR? (IDENTIFIER | NUMERAL) ;
      identifierAttributePair = IDENTIFIER DOT ATTRIBUTE ;
+
+### Example Strings
+
+     view1.left = 10
+     view1.width = superview.width
+     view1.width = superview.width * 0.9
+     view1.width = view2.width - 20
+     view1.width = view2.width * 0.9 + 5
+     view1.trailing >= 20
