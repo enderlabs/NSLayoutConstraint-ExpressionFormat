@@ -21,58 +21,41 @@ Auto Layout uses a series of linear equations as constraints to determine the si
                | "height"
                | "centerX"
                | "centerY"
-               | "baseline"
-               ;
+               | "baseline" ;
 
-     IDENTIFIER = [_a-zA-Z][_a-zA-Z0-9]*
-                ;
+     IDENTIFIER = [_a-zA-Z][_a-zA-Z0-9]* ;
 
-     NUMERAL = [0-9]+("."[0-9]+)?
+     NUMERAL = [0-9]+("."[0-9]+)? ;
 
-     MUL_OPERATOR = "*"
-                  ;
+     MUL_OPERATOR = "*" ;
 
-     EQ_OPERATOR = "="
-                 ;
+     EQ_OPERATOR = "=" ;
 
-     GTE_OPERATOR = ">="
-                  ;
+     GTE_OPERATOR = ">=" ;
 
-     LTE_OPERATOR = "<="
-                  ;
+     LTE_OPERATOR = "<=" ;
 
-     SUB_OPERATOR = "-"
-                  ;
+     SUB_OPERATOR = "-" ;
 
-     ADD_OPERATOR = "+"
-                  ;
+     ADD_OPERATOR = "+" ;
 
-     DOT = "."
-         ;
+     DOT = "." ;
 
-     EOF = <end of file/string>
-         ;
+     EOF = <end of file/string> ;
 
-     expression = identifierAttributePair relationOperator rightSubexpression EOF
-                ;
+     expression = identifierAttributePair relationOperator rightSubexpression EOF ;
 
      relationOperator = EQ_OPERATOR
                       | GTE_OPERATOR
-                      | LTE_OPERATOR
-                      ;
+                      | LTE_OPERATOR ;
 
      rightSubexpression = identifierAttributePair scaleExpression? addExpression?
-                        | constant
-                        ;
+                        | constant ;
 
-     scaleExpression = MUL_OPERATOR constant
-                     ;
+     scaleExpression = MUL_OPERATOR constant ;
 
-     addExpression = (ADD_OPERATOR | SUB_OPERATOR) constant
-                   ;
+     addExpression = (ADD_OPERATOR | SUB_OPERATOR) constant ;
 
-     constant = SUB_OPERATOR? (IDENTIFIER | NUMERAL)
-              ;
+     constant = SUB_OPERATOR? (IDENTIFIER | NUMERAL) ;
 
-     identifierAttributePair = IDENTIFIER DOT ATTRIBUTE
-                             ;
+     identifierAttributePair = IDENTIFIER DOT ATTRIBUTE ;
