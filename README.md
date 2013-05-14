@@ -76,6 +76,10 @@ There are three key rules to keep in mind when using Auto Layout, including when
 
 You create expression-based constraints using `constraintWithExpressionFormat:parameters:`, a class method added to NSLayoutConstraint by this category.
 
+     self.someView = [[UIView alloc] init];
+     self.someView.translatesAutoresizingMaskIntoConstraints = NO;
+     [view addSubview:self.someView];
+     
      NSDictionary *parameters = @{ @"view" : self.someView };
      [view addConstraint:[NSLayoutConstraint constraintWithExpressionFormat:@"view.left = 10" parameters:parameters]];
      [view addConstraint:[NSLayoutConstraint constraintWithExpressionFormat:@"view.top = 10" parameters:parameters]];
