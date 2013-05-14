@@ -91,3 +91,17 @@ In addition to putting views in the parameters dictionary, you can put NSNumber 
      NSDictionary *parameters = @{ @"view" : self.someView, @"margin" : @10 };
      [view addConstraint:[NSLayoutConstraint constraintWithExpressionFormat:@"view.left = margin" parameters:parameters]];
      [view addConstraint:[NSLayoutConstraint constraintWithExpressionFormat:@"view.top = margin" parameters:parameters]];
+
+### Multiple Views
+
+You can reference multiple views within an expression.
+
+     NSDictionary *parameters = @{ @"view1" : self.someView, @"view2" : self.someOtherView };
+     [view addConstraint:[NSLayoutConstraint constraintWithExpressionFormat:@"view2.left = view1.right + 10"]];
+
+### Superview
+
+The expression format specially handles references to `superview`. If it encounters `superview`, it will use the superview of the view on the left side of the expression.
+
+     NSDictionary *parameters = @{ @"view" : self.someView };
+     [view addConstraint:[NSLayoutConstraint constraintWithExpressionFormat:@"view.centerX = superview.centerX" parameters:parameters]];
